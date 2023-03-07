@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Jira Ticket Acceptance Criteria Generator",
+  "description": "The extension creates acceptance criteria from a Jira ticket. Just open a ticket and press the button. It scrapes content from <div class='user-content-block'> and sends it to the Open AI Completion API (gpt-3.5-turbo model)",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": [ "content_script.js" ],
+      "matches": [ "*://*/*" ]
+    }
+  ]
+}
